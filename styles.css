@@ -416,8 +416,9 @@ h1 span {
   display: grid;
   grid-template-rows: auto 180px 1fr;
   overflow: hidden;
-  border-color: var(--line);
+  border: 1px solid #cbded8;
   background: #fff;
+  box-shadow: 0 10px 26px rgba(36, 59, 61, 0.1);
 }
 
 .day-card.is-hidden {
@@ -429,20 +430,24 @@ h1 span {
 }
 
 .day-head {
-  padding: 18px 18px 12px;
+  border-bottom: 1px solid #d7e6e0;
+  padding: 18px 18px 14px;
+  background: #ffffff;
 }
 
 .day-head p {
   margin-bottom: 6px;
-  color: var(--coral);
+  color: #a33e4d;
+  font-size: 12px;
   font-weight: 950;
   text-transform: uppercase;
 }
 
 .day-head h3 {
   margin: 0;
-  color: var(--deep);
+  color: #183638;
   font-size: 28px;
+  font-weight: 950;
   line-height: 1.12;
 }
 
@@ -456,27 +461,30 @@ h1 span {
 .timeline {
   display: grid;
   gap: 0;
-  padding: 6px 18px 18px;
+  padding: 8px 18px 18px;
+  background: #f9fffc;
 }
 
 .timeline div {
   display: grid;
   grid-template-columns: 72px 1fr;
   gap: 12px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
+  padding: 13px 0;
+  border-top: 1px solid #d2e3dd;
 }
 
 .timeline time {
-  color: var(--sea);
+  color: #075d61;
+  font-size: 14px;
   font-weight: 950;
 }
 
 .timeline p {
   margin: 0;
-  color: var(--ink);
-  font-weight: 760;
-  line-height: 1.65;
+  color: #162729;
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.72;
 }
 
 .action-section {
