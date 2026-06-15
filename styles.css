@@ -413,8 +413,8 @@ h1 span {
 }
 
 .day-card {
-  display: grid;
-  grid-template-rows: auto 180px 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid #cbded8;
   background: #fff;
@@ -454,15 +454,27 @@ h1 span {
 .day-card img,
 .option-card img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
+.day-card img {
+  flex: 0 0 auto;
+  height: 220px;
+}
+
+.day-card.featured img {
+  height: 260px;
+}
+
 .timeline {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
   display: grid;
   gap: 0;
+  border-top: 1px solid #d2e3dd;
   padding: 8px 18px 18px;
-  background: #f9fffc;
+  background: #ffffff;
 }
 
 .timeline div {
@@ -697,7 +709,12 @@ h1 span {
   }
 
   .day-card {
-    grid-template-rows: auto 190px auto;
+    display: flex;
+  }
+
+  .day-card img,
+  .day-card.featured img {
+    height: 210px;
   }
 
   .timeline div {
