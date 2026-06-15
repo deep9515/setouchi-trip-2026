@@ -1,15 +1,16 @@
 :root {
-  --ink: #172021;
-  --muted: #667173;
-  --paper: #f4f0e8;
-  --surface: #fffaf0;
-  --sea: #0e6174;
-  --deep: #12313d;
-  --sun: #f3b43f;
-  --coral: #d66b4c;
-  --mint: #8ab7a5;
-  --line: #dfd5c4;
-  --shadow: 0 18px 48px rgba(18, 49, 61, 0.16);
+  --ink: #1c2b2d;
+  --muted: #647477;
+  --paper: #f5fbf8;
+  --surface: #ffffff;
+  --soft: #fff5f1;
+  --sea: #2b7a78;
+  --deep: #243b3d;
+  --sun: #f5b15f;
+  --coral: #d76572;
+  --mint: #dceee7;
+  --line: #d8e5df;
+  --shadow: 0 14px 34px rgba(36, 59, 61, 0.12);
 }
 
 * {
@@ -23,7 +24,9 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, #fff, var(--paper) 420px),
+    var(--paper);
   font-family:
     "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui,
     sans-serif;
@@ -51,7 +54,7 @@ a {
   min-height: 68px;
   padding: 14px clamp(18px, 6vw, 72px);
   border-bottom: 1px solid rgba(23, 32, 33, 0.12);
-  background: rgba(244, 240, 232, 0.92);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
 }
 
@@ -76,8 +79,8 @@ a {
   width: 42px;
   height: 42px;
   border-radius: 8px;
-  color: #fff;
-  background: var(--deep);
+  color: var(--deep);
+  background: #ffe1d9;
 }
 
 .nav-links {
@@ -99,7 +102,7 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(300px, 410px);
   gap: clamp(22px, 5vw, 56px);
   align-items: end;
-  min-height: 660px;
+  min-height: 640px;
   padding: clamp(58px, 9vw, 118px) clamp(18px, 6vw, 82px) 52px;
   overflow: hidden;
   isolation: isolate;
@@ -116,26 +119,27 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 58%;
 }
 
 .hero-overlay {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(11, 28, 34, 0.78), rgba(11, 28, 34, 0.38) 56%, rgba(11, 28, 34, 0.16)),
-    linear-gradient(0deg, rgba(11, 28, 34, 0.72), transparent 44%);
+    linear-gradient(90deg, rgba(18, 37, 39, 0.84), rgba(18, 37, 39, 0.48) 56%, rgba(18, 37, 39, 0.2)),
+    linear-gradient(0deg, rgba(18, 37, 39, 0.7), transparent 46%);
 }
 
 .hero-content {
   max-width: 720px;
   color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.34);
 }
 
 .eyebrow,
 .section-heading p,
 .panel-label {
   margin: 0 0 10px;
-  color: var(--sun);
+  color: var(--coral);
   font-size: 13px;
   font-weight: 950;
   letter-spacing: 0;
@@ -164,7 +168,8 @@ h1 span {
   max-width: 620px;
   margin-bottom: 0;
   font-size: clamp(17px, 2vw, 22px);
-  font-weight: 760;
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 820;
   line-height: 1.85;
 }
 
@@ -172,16 +177,18 @@ h1 span {
 .day-card,
 .action-card,
 .checklist,
-.option-card {
-  border: 1px solid rgba(255, 255, 255, 0.34);
+.option-card,
+.candidate-card {
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 250, 240, 0.92);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
 .ticket-card {
   padding: 24px;
   color: var(--ink);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
 }
 
@@ -206,7 +213,7 @@ h1 span {
   margin-bottom: 18px;
   padding: 14px;
   border-radius: 8px;
-  background: #fff3cf;
+  background: #fff2e8;
 }
 
 .countdown span {
@@ -224,7 +231,8 @@ h1 span {
 
 .primary-link,
 .option-card a,
-.link-grid a {
+.link-grid a,
+.candidate-card a {
   color: #fff;
   font-weight: 900;
   text-decoration: none;
@@ -241,7 +249,7 @@ h1 span {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-block: 1px solid var(--line);
-  background: var(--surface);
+  background: #fff;
 }
 
 .quick-facts article {
@@ -286,8 +294,93 @@ h1 span {
 .section-heading h2 {
   margin-bottom: 0;
   color: var(--deep);
-  font-size: clamp(34px, 5vw, 68px);
+  font-size: clamp(34px, 5vw, 64px);
   line-height: 1;
+}
+
+.candidate-note {
+  max-width: 780px;
+  margin-bottom: 18px;
+}
+
+.candidate-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 760;
+  line-height: 1.85;
+}
+
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.candidate-card {
+  overflow: hidden;
+}
+
+.candidate-card.large {
+  grid-column: span 2;
+}
+
+.candidate-card a {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  color: #fff;
+  background: var(--deep);
+}
+
+.candidate-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.candidate-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 22, 24, 0.12), rgba(10, 22, 24, 0.68) 56%, rgba(10, 22, 24, 0.88)),
+    linear-gradient(90deg, rgba(10, 22, 24, 0.32), transparent);
+}
+
+.candidate-card div {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  padding: 18px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.44);
+}
+
+.candidate-card span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 950;
+  background: rgba(255, 238, 226, 0.92);
+}
+
+.candidate-card h3 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.08;
+}
+
+.candidate-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 14px;
+  font-weight: 820;
+  line-height: 1.65;
 }
 
 .day-tabs {
@@ -324,7 +417,7 @@ h1 span {
   grid-template-rows: auto 180px 1fr;
   overflow: hidden;
   border-color: var(--line);
-  background: #fffaf0;
+  background: #fff;
 }
 
 .day-card.is-hidden {
@@ -388,7 +481,7 @@ h1 span {
 
 .action-section {
   background:
-    linear-gradient(135deg, rgba(14, 97, 116, 0.12), rgba(243, 180, 63, 0.18)),
+    linear-gradient(135deg, rgba(43, 122, 120, 0.12), rgba(255, 225, 217, 0.72)),
     var(--paper);
 }
 
@@ -404,12 +497,12 @@ h1 span {
 .option-card {
   border-color: var(--line);
   padding: clamp(18px, 3vw, 28px);
-  background: var(--surface);
+  background: #fff;
 }
 
 .action-card.urgent {
-  color: #fff;
-  background: var(--deep);
+  color: var(--ink);
+  background: var(--soft);
 }
 
 .action-card h3,
@@ -464,6 +557,7 @@ h1 span {
   align-content: start;
   overflow: hidden;
   padding: 0;
+  background: #fff;
 }
 
 .option-card img {
@@ -482,8 +576,8 @@ h1 span {
 
 .option-card p {
   margin-bottom: 0;
-  color: var(--muted);
-  font-weight: 760;
+  color: var(--ink);
+  font-weight: 780;
   line-height: 1.7;
 }
 
@@ -509,7 +603,7 @@ h1 span {
   gap: 18px;
   padding: 24px clamp(18px, 6vw, 82px);
   border-top: 1px solid var(--line);
-  background: #fffaf0;
+  background: #fff;
 }
 
 .site-footer p {
@@ -519,6 +613,7 @@ h1 span {
 }
 
 @media (max-width: 1100px) {
+  .candidate-grid,
   .day-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -557,6 +652,18 @@ h1 span {
 
   .quick-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .candidate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-card.large {
+    grid-column: span 1;
+  }
+
+  .candidate-card a {
+    min-height: 280px;
   }
 
   .quick-facts article {
